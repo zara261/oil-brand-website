@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orbit Council | Products</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="java.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+  
+  </style>
+</head>
+<body>
+ <div id="header"></div>
+
+      <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-overlay text-center">
+        <div class="container">
+          <h1 class="display-4">Our Premium Products</h1>
+          <p class="lead">Crafted with care. Trusted by families.</p>
+        </div>
+      </div>
+    </section>
+
+
+  <div class="container py-5">
+    <div class="row" id="product-list">
+      <!-- Product Card 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="card product-card">
+          <img  src="assets/canola-oil.jfif" class="card-img-top" alt="Product 1">
+          <div class="card-body text-center">
+            <h5 class="card-title">Canola Oil</h5>
+            <p class="card-text">Low cholesterol, vitamin-rich oil perfect for heart health.</p>
+            <p class="fw-bold">$20</p>
+            <button class="btn" style="background-color: #b98b0d; color: whitesmoke; font-weight: bold;" onclick="addToCart('Canola Oil', 20)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Card 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="card product-card">
+          <img  src="assets/sunflower-Oil.jfif" class="card-img-top" alt="Product 2">
+          <div class="card-body text-center">
+            <h5 class="card-title">Sunflower Oil</h5>
+            <p class="card-text">Light and healthy oil for everyday cooking and frying.</p>
+            <p class="fw-bold">$50</p>
+            <button class="btn" style="background-color: #b98b0d; color: whitesmoke; font-weight: bold;"onclick="addToCart('Sunflower Oil', 50)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Card 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="card product-card">
+          <img  src="assets/corn-oil.jfif" class="card-img-top" alt="Product 3">
+          <div class="card-body text-center">
+            <h5 class="card-title">Corn Oil</h5>
+            <p class="card-text">Rich in polyunsaturated fats and perfect for deep frying.</p>
+            <p class="fw-bold">$10</p>
+            <button class="btn" style="background-color: #b98b0d; color: whitesmoke; font-weight: bold;" onclick="addToCart('Corn Oil', 10)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+
+
+       <!-- Product Card 4 -->
+      <div class="col-md-4 mb-4">
+        <div class="card product-card">
+          <img  src="assets/oliv-oil.jfif" class="card-img-top" alt="Product 3">
+          <div class="card-body text-center">
+            <h5 class="card-title">Olive Oil</h5>
+            <p class="card-text">Cold-pressed and rich in antioxidants for salads and cooking.</p>
+            <p class="fw-bold">$10</p>
+            <button class="btn " style="background-color: #b98b0d; color: whitesmoke; font-weight: bold;" onclick="addToCart('Olive Oil', 10)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+       <!-- Product Card 5 -->
+      <div class="col-md-4 mb-4">
+        <div class="card product-card">
+          <img  src="assets/Mustard-oil.jfif" class="card-img-top" alt="Product 3">
+          <div class="card-body text-center">
+            <h5 class="card-title">Mustard Oil</h5>
+            <p class="card-text">Traditional flavor for pickles, sautéing, and rich dishes.</p>
+            <p class="fw-bold">$10</p>
+            <button class="btn" style="background-color: #b98b0d; color: whitesmoke; font-weight: bold;" onclick="addToCart('Mustard Oil', 10)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+       <!-- Product Card 6 -->
+      <div class="col-md-4 mb-4">
+        <div class="card product-card">
+          <img  src="assets/coconut-oil.jfif" class="card-img-top" alt="Product 3">
+          <div class="card-body text-center">
+            <h5 class="card-title">Coconut Oil</h5>
+            <p class="card-text">100% natural and aromatic oil for cooking and beauty care.</p>
+            <p class="fw-bold">$10</p>
+            <button class="btn" style="background-color: #b98b0d; color: whitesmoke; font-weight: bold;" onclick="addToCart('Coconut Oil', 10)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+       <!-- Product Card 7 -->
+      <div class="col-md-4 mb-4">
+        <div class="card product-card">
+          <img  src="assets/premium -bnaspati-ghee" class="card-img-top" alt="Product 3">
+          <div class="card-body text-center">
+            <h5 class="card-title">Premium Banaspati</h5>
+            <p class="card-text">Granular texture and authentic flavor for every meal.</p>
+            <p class="fw-bold">$10</p>
+            <button class="btn" style="background-color: #b98b0d; color: whitesmoke; font-weight: bold;" onclick="addToCart('Premium Banaspati', 10)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+
+  <!-- Cart Sidebar -->
+    <div id="cart">
+    <h4 class="mb-3">Your Cart</h4>
+    <ul id="cart-items" class="list-group mb-3"></ul>
+    <h5>Total: $<span id="cart-total">0</span></h5>
+    <button style="background-color: #b98b0d; color: whitesmoke; font-weight: bold;" class="btn btn-primary w-100 mt-3" onclick="checkout()">Checkout</button>
+  </div>
+
+  <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="orderModalLabel">Complete Your Order</h5>
+          <button type="button"  class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="orderForm">
+            <div class="mb-3">
+              <label for="name" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input type="tel" class="form-control" id="phone" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+              <label for="map" class="form-label">Delivery Address</label>
+              <input id="address" class="form-control mb-2" placeholder="Click on map to select location" required readonly>
+              <div id="map"></div>
+            </div>
+            <button type="submit" style="background-color: #b98b0d;" class="btn btn-success w-100">Place Order</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<div id="footer"></div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script>
+  let cart = [];
+
+  function addToCart(product, price) {
+    cart.push({ name: product, price });
+    renderCart();
+  }
+
+  function renderCart() {
+    const cartItems = document.getElementById("cart-items");
+    cartItems.innerHTML = "";
+    let total = 0;
+    cart.forEach((item, i) => {
+      total += item.price;
+      const li = document.createElement("li");
+      li.className = "list-group-item d-flex justify-content-between align-items-center";
+      li.textContent = item.name + " - $" + item.price;
+      const removeBtn = document.createElement("button");
+      removeBtn.className = "btn btn-sm btn-danger";
+      removeBtn.innerText = "Remove";
+      removeBtn.onclick = () => {
+        cart.splice(i, 1);
+        renderCart();
+      };
+      li.appendChild(removeBtn);
+      cartItems.appendChild(li);
+    });
+    document.getElementById("cart-total").innerText = total;
+  }
+
+  let leafletMap, marker;
+
+  function checkout() {
+    if (cart.length === 0) {
+      alert("Your cart is empty!");
+      return;
+    }
+
+    const modalEl = document.getElementById("orderModal");
+    const modal = new bootstrap.Modal(modalEl);
+    modal.show();
+
+    modalEl.addEventListener("shown.bs.modal", function () {
+      if (!leafletMap) {
+        leafletMap = L.map('map').setView([33.6844, 73.0479], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '© OpenStreetMap contributors'
+        }).addTo(leafletMap);
+
+        leafletMap.on('click', function(e) {
+          const latlng = e.latlng;
+          if (marker) marker.remove();
+          marker = L.marker(latlng).addTo(leafletMap);
+          document.getElementById('address').value = `Lat: ${latlng.lat.toFixed(5)}, Lng: ${latlng.lng.toFixed(5)}`;
+        });
+      }
+
+      setTimeout(() => {
+        leafletMap.invalidateSize();
+      }, 200);
+    }, { once: true });
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    // Load header
+    fetch("header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+
+        const cartToggleBtn = document.getElementById("cart-toggle");
+        if (cartToggleBtn) {
+          cartToggleBtn.addEventListener("click", () => {
+            const cartDiv = document.getElementById("cart");
+            cartDiv.style.display = cartDiv.style.display === "none" ? "block" : "none";
+          });
+        }
+      });
+
+    // Handle order form submit
+    document.getElementById("orderForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = document.getElementById("name").value;
+      const phone = document.getElementById("phone").value;
+      const email = document.getElementById("email").value;
+      const address = document.getElementById("address").value;
+      alert(`Order Confirmed!\n\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nAddress: ${address}`);
+      cart = [];
+      renderCart();
+      bootstrap.Modal.getInstance(document.getElementById("orderModal")).hide();
+      document.getElementById("cart").style.display = "none";
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Contact Us - Oil Brand</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+   <script src="java.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+     <div id="header"></div>
+     <!-- Contact Header -->
+
+      <section class="hero-section">
+      <div class="hero-overlay text-center">
+        <div class="container">
+          <h1 class="display-4">Contact Us</h1>
+          <p class="lead">We’d love to hear from you! Reach out for queries, feedback or business opportunities.</p>
+        </div>
+      </div>
+    </section>
+
+  <!-- Contact Info & Form -->
+  <section class="container py-5">
+    <div class="row g-4">
+      <!-- Contact Details -->
+      <div class="col-md-5">
+        <h3>Head Office</h3>
+        <p><strong>Address:</strong> 123 Industrial Zone, Karachi, Pakistan</p>
+        <p><strong>Email:</strong> info@oilbrand.com</p>
+        <p><strong>Phone:</strong> +92 300 1234567</p>
+
+        <h5 class="mt-4">Business Hours</h5>
+        <p>Mon - Sat: 9:00 AM - 6:00 PM<br>Sunday: Closed</p>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="col-md-7">
+        <h3>Send Us a Message</h3>
+        <form>
+          <div class="mb-3">
+            <label for="name" class="form-label">Your Name</label>
+            <input type="text" class="form-control" id="name" required />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" required />
+          </div>
+          <div class="mb-3">
+            <label for="subject" class="form-label">Subject</label>
+            <input type="text" class="form-control" id="subject" required />
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" rows="4" required></textarea>
+          </div>
+          <button type="submit" style="background-color: #8a6709; color: black;" class="btn btn-dark">Send Msg</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Embed -->
+  <section class="container mb-5">
+    <h3 style="color: #b98b0d;" class="text-center mb-3">Our Location</h3>
+    <div class="ratio ratio-16x9">
+      <iframe
+        src="https://www.google.com/maps?q=karachi+pakistan&output=embed"
+        style="border:0;"  allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section>
+
+   <div id="footer"></div>
+</body>
+</html>
